@@ -1,3 +1,10 @@
+:root {
+  --color-primary-dark: #31261a;
+  --color-primary-light: #faf4ea;
+  --color-brand: #819b57;
+  --color-brand-dark: #465929;
+}
+
 @font-face {
   font-display: swap;
   font-style: normal;
@@ -29,11 +36,17 @@
   src: url("../fonts/poppins-v20-latin-900.woff2") format("woff2");
 }
 
-:root {
-  --color-primary-dark: #31261a;
-  --color-primary-light: #faf4ea;
-  --color-brand: #819b57;
-  --color-brand-dark: #465929;
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
 }
 
 /* global */
@@ -43,12 +56,31 @@ body {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.5;
+  margin: 0;
 }
+
 ul {
   list-style-type: none;
 }
 address {
   font-style: normal;
+}
+.section {
+  padding: 48px 0;
+}
+.visualy-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.container{
+  width: 100%;
+  max-width: 1288px;
+  margin: 0 auto;
+  padding: 0 24px; /*додаємо до ширини 1240+24+24=1288 */
 }
 /* button */
 .button {
@@ -74,12 +106,14 @@ address {
   font-weight: 600;
 }
 /* hero section */
+.hero-section {
+  padding: 272px 0;
+}
 .hero-title {
+  margin-bottom: 0;
   text-align: center;
   font-size: 128px;
-  font-style: normal;
   font-weight: 900;
-  line-height: normal;
   color: var(--color-primary-light);
 }
 .hero-title .accent {
@@ -103,6 +137,9 @@ address {
   line-height: 1.3;
 }
 /* tradition section */
+.tradition-section{
+  padding-top: 96px;
+}
 .tradition-text .uppercase {
   text-transform: uppercase;
   color: var(--color-brand);
@@ -111,15 +148,25 @@ address {
   color: var(--color-brand);
   font-weight: 600;
 }
-
+.tradition-title{
+  margin-bottom: 42px;
+}
 /* chefs section */
-.chefs-title {
+.chef-title{
+  margin-bottom: 80px;
+}
+.chef-title {
+  margin-bottom: 16px;
   font-size: 40px;
   font-weight: 600;
 }
 
 /* formats section */
-.formats-title {
+.formats-title{
+  margin-bottom: 80px;
+}
+.format-title {
+  margin-bottom: 16px;
   font-size: 24px;
   font-weight: 600;
 }
@@ -127,7 +174,10 @@ address {
   font-size: 14px;
   font-weight: 300;
 }
-
+/* contacts-section */
+.contacts-title{
+  margin-bottom: 16px;
+}
 /* foooter */
 .adress-link {
   font-size: 16px;
