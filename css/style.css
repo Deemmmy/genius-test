@@ -4,7 +4,7 @@
   --color-brand: #819b57;
   --color-brand-dark: #465929;
   --color-brand-light: #cfcfbc;
-  --color-secondary-dark: #A18268;
+  --color-secondary-dark: #a18268;
 }
 
 @font-face {
@@ -38,7 +38,9 @@
   src: url("../fonts/poppins-v20-latin-900.woff2") format("woff2");
 }
 
-* {
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
 h1,
@@ -50,7 +52,9 @@ h6,
 p {
   margin-top: 0;
 }
-
+a {
+  display: inline-block;
+}
 /* global */
 body {
   background-color: var(--color-primary-light);
@@ -197,6 +201,8 @@ address {
 .tradition-title {
   margin-bottom: 42px;
 }
+
+
 /* chefs section */
 .chefs-title {
   margin: 0 auto 80px;
@@ -216,6 +222,23 @@ address {
   background-color: var(--color-brand-light);
   content: "";
 }
+.chefs-list {
+  display: flex;
+  gap: 30px;
+}
+.chef-text p{
+  margin-bottom: 24px;
+}
+.chef-text p:last-child{
+  margin-bottom: 0;
+}
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
 .chef-title {
   margin-bottom: 16px;
   font-size: 40px;
@@ -223,10 +246,16 @@ address {
 }
 .chef-photo {
   border-radius: 4px 4px 4px 200px;
-  box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-dark);
+  box-shadow: -16px 16px 0 0 var(--color-primary-light),
+    -16px 16px 0 2px var(--color-secondary-dark);
 }
 
 /* formats section */
+.formats-container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
 .formats-item {
   flex-basis: calc((100% - 40px) / 3);
 }
@@ -259,9 +288,11 @@ address {
   font-size: 14px;
   font-weight: 300;
 }
+
 /* corousel */
-.corousel-button{
+.corousel-button {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   width: 44px;
@@ -272,23 +303,55 @@ address {
   cursor: pointer;
   fill: var(--color-primary-dark);
 }
-.corousel-button:hover{
+.corousel-button:hover {
   background-color: var(--color-primary-dark);
   fill: var(--color-primary-light);
 }
 
-
 /* contacts-section */
+.conatct-section {
+  padding-bottom: 96px;
+}
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
 .contacts-title {
   margin-bottom: 16px;
 }
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+}
+
 /* foooter */
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+.footer-nav,
+.footer-adress {
+  flex-basis: 50%;
+  display: flex;
+  gap: 20px;
+}
+.footer-logo,
+.footer-menu {
+  flex-grow: 1;
+}
+
 .footer {
   background-image: url(../img/footer-bg.png);
   background-color: var(--color-primary-dark);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding: 32px 0;
+}
+.adress-list,
+.adress-info {
+  flex-grow: 1;
 }
 .adress-link {
   font-size: 16px;
@@ -299,12 +362,13 @@ address {
 .adress-link:hover {
   color: var(--color-brand);
 }
-.adress-icon{
+.adress-icon {
   fill: var(--color-primary-light);
 }
-.adress-icon:hover{
+.adress-icon:hover {
   fill: var(--color-brand);
 }
 .adress-copyright {
   font-size: 14px;
+  color: var(--color-secondary-dark);
 }
