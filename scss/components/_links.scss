@@ -1,0 +1,13 @@
+
+.link {
+    color: var(--color-primary-light);
+    text-decoration: none;
+    transition: color 0.3s;
+    &--black{
+      color: #000;
+    }
+  }
+  .link:hover {
+    color: var(--color-brand);
+  }
+  
